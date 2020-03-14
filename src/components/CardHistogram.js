@@ -16,46 +16,7 @@ class CardHistogram extends React.Component {
     }
 
     componentDidMount() {
-        this.myChart = new Chart( this.canvasRef.current, {
-            type: 'line',
-            options: {
-                maintainAspectRatio: false,
-                scales: {
-                    xAxes: [
-                        {
-                            type: 'time',
-                            time: {
-                                unit: 'month'
-                            }
-                        }
-                    ],
-                    // yAxes: [
-                    //     {
-                    //         ticks: {
-                    //             //calcul des bornes inférieure et supérieure du graph
-                    //             min: this.props.data.value.min - ( this.props.data.value.min % 10 ),
-                    //             max: this.props.data.value.max + 10 - ( this.props.data.value.max % 10 )
-                    //             // min: 350
-                    //             // max: 550
-                    //         }
-                    //     }
-                    // ]
-                }
-            },
-            data: {
-                labels: this.props.data.map( d => d.time ),
-                datasets: [{
-                    label: this.props.data[0].perimeter + " : " + this.props.data[0].title,
-                    data: this.props.data.map( d => d.value ),
-                    fill: 'none',
-                    backgroundColor: "black",       //this.props.color,
-                    pointRadius: 2,
-                    borderColor: "#e9041e",       //this.props.color,
-                    borderWidth: 2,
-                    lineTension: 0
-                }]
-            }
-        } );
+        this.myChart = new Chart( this.canvasRef.current, this.props.data );
     }
 
     render() {

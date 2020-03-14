@@ -1,11 +1,11 @@
 import React from 'react';
 import './index.css';
-import { Chart } from '../node_modules/chart.js';
+//import { Chart } from '../node_modules/chart.js';
 
 import CardHistogram from "./components/CardHistogram";
-// import CardLineChart from "./components/CardLineChart";
-// import CardPieChart from "./components/CardPieChart";
-import { createDataArray1 } from './dataGeneration';
+import CardLineChart from "./components/CardLineChart";
+import CardPieChart from "./components/CardPieChart";
+import { Progression, Repartition, Distribution } from './dataGeneration';
 
 export default class AppClass extends React.Component {
     render() {
@@ -38,37 +38,22 @@ export default class AppClass extends React.Component {
                     <h2>Distribution</h2>
                 </div>
                 <div className="row">
-                    {
-                        <CardHistogram className="LineChart" data={createDataArray1()} />
-                        //    perimeters0.map( perimeter => (
-                        //         <CardHistogram perimeter={perimeter.name} />
-                        //     ) )
-                    }
-                </div>
-
-                {/* <div className="row group">
-                    <h2>Répartition</h2>
-                </div>
-                <div className="row">
-                    {
-                        this.props.map( perimeter => ( <CardHistogram perimeter={perimeter.name} /> ) )
-                        // perimeters0.map( perimeter => (
-                        //     <CardPieChart perimeter={perimeter.name} />
-                        // ) )
-                    }
+                    {<CardPieChart className="PieChart" data={Distribution()} />}
                 </div>
 
                 <div className="row group">
                     <h2>Progression</h2>
                 </div>
                 <div className="row">
-                    {
-                        this.props.map( perimeter => ( <CardHistogram perimeter={perimeter.name} /> ) )
-                        // perimeters0.map( perimeter => (
-                        //     <CardLineChart perimeter={perimeter.name} />
-                        // ) )
-                    }
-                </div> */}
+                    {<CardLineChart className="LineChart" data={Progression()} />}
+                </div>
+
+                <div className="row group">
+                    <h2>Répartition</h2>
+                </div>
+                <div className="row">
+                    {<CardHistogram className="Histogram" data={Repartition()} />}
+                </div>
 
                 <div className="App-footer row">
                     <p>Pied de page</p>

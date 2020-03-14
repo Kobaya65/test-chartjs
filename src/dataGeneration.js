@@ -1,154 +1,167 @@
 /**
+ * Génération de données pour créer un graphique "Camembert"
+ */
+function Distribution() {
+    let config = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [
+                    26,
+                    74
+                ],
+                backgroundColor: [
+                    '#e9041e',  // rouge SG
+                    'black'
+                ],
+                label: 'Dataset 1'
+            }],
+            labels: [
+                'Not Validated Applications',
+                'Validated applications'
+            ]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'RESG Validated / Not validated Applications as of 12-March-2020',
+                fontSize: 30
+            }
+        }
+    }
+
+    return config
+};
+
+/**
  * Génération de données pour créer un graphique "Line"
  */
-function createDataArray1() {
-    let data = [];
+function Progression() {
+    let config = {
+        type: 'line',
+        data: {
+            labels: ["Janv", "Fév", "Mar", "Avr", "Mai", "Jun", "Jul", "Aou", "Sep", "Oct", "Nov", "Déc"],
+            datasets:
+                [{
+                    label: "RESG 2018",
+                    data: [403, 398, 398, 398, 396, 395, 395, 394, 393, 390, 390, 389],
+                    fill: false,
+                    backgroundColor: "black",       // seulement si fill: true
+                    borderColor: "#e9041e",
+                    lineTension: 0,
+                    borderWidth: 5,                 // épaisseur de la ligne
+                    steppedLine: false,             // (false), true, 'before','after', 'middle'
+                    //clip: { left: 5, top: false, right: -2, bottom: 0 },
+                    pointBackgroundColor: "red",
+                    // pointBorderColor: "green",      // couleur des points
+                    pointBorderWidth: 5,            // taille des points
+                    pointStyle: '',                 // 'circle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star'
+                    borderDash: [],  //[25, 5, 5, 5]  // ligne en pointillé ou tirets ; tableau vide = ligne pleine
+                    hoverBackgroundColor: ["yellow"]
+                }/*,
+                {
+                    label: "RESG/BSC 2018",
+                    data: [40, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 38],
+                    fill: false,
+                    borderColor: "black",
+                    lineTension: 0
+                }*/]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'RESG Applications in Prod as of 12-March-2020',
+                fontSize: 30
+            },
+            // scales: {
+            //     xAxes: [
+            //         { type: 'time', time: { unit: 'month' } }
+            //     ]
+            // yAxes: [{
+            //     ticks: {
+            //         //calcul des bornes inférieure et supérieure du graph
+            //         // min: this.props.data.value.min - ( this.props.data.value.min % 10 ),
+            //         // max: this.props.data.value.max + 10 - ( this.props.data.value.max % 10 )
+            //         min: 350,
+            //         max: 550
+            //     }
+            // }]
+        }
+    }
 
-    // série 2019
-    data.push(
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-01-01T00:00:00' ),
-            value: 403
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-02-01T00:00:00' ),
-            value: 398
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-03-01T00:00:00' ),
-            value: 398
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-04-01T00:00:00' ),
-            value: 398
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-05-01T00:00:00' ),
-            value: 397
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-06-01T00:00:00' ),
-            value: 395
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-07-01T00:00:00' ),
-            value: 395
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-08-01T00:00:00' ),
-            value: 394
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-09-01T00:00:00' ),
-            value: 393
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-10-01T00:00:00' ),
-            value: 390
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-11-01T00:00:00' ),
-            value: 390
-        },
-        {
-            title: "Number of validated applications",
-            perimeter: "RESG",
-            time: new Date( '2019-12-01T00:00:00' ),
-            value: 389
-        } )
-
-    return data;
+    return config;
 }
 
-function createDataArray2() {
-    let data = [];
+function rndColor() {
+    let chaine = "rgb( ";
 
-    // série 2018
-    data.push(
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-01-01T00:00:00' ),
-            value: 520
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-02-01T00:00:00' ),
-            value: 515
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-03-01T00:00:00' ),
-            value: 515
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-04-01T00:00:00' ),
-            value: 510
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-05-01T00:00:00' ),
-            value: 510
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-06-01T00:00:00' ),
-            value: 508
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-07-01T00:00:00' ),
-            value: 506
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-08-01T00:00:00' ),
-            value: 500
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-09-01T00:00:00' ),
-            value: 500
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-10-01T00:00:00' ),
-            value: 495
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-11-01T00:00:00' ),
-            value: 495
-        },
-        {
-            perimeter: "RESG",
-            time: new Date( '2018-12-01T00:00:00' ),
-            value: 492
-        } )
+    // rouge
+    chaine = chaine + Math.random() * 255 + ", ";
+    // vert
+    chaine = chaine + Math.random() * 255 + ", ";
+    // bleu
+    chaine = chaine + Math.random() * 255 + " )";
 
-    return data;
+    return chaine;
 }
 
-export { createDataArray1, createDataArray2 };
+/**
+ * Génération de données pour créer un graphique "Histogramme"
+ */
+function Repartition() {
+    let config = {
+        type: 'bar',
+        data: {
+            labels: ["RESG/BSC", "RESG/BSC/ARC", "RESG/BSC/ISA", "RESG/BSC/TAE", "ITIM/SRO",
+                "ITIM/SRO/ORM", "ITIM/SRO/ICI", "ITIM/SRO/MDK", "ITIM/CSB", "ITIM/CSB/POO"],
+            datasets: [{
+                // label: "Série 1",
+                data: [50, 17, 10, 23, 60, 20, 25, 30, 40, 27],
+                // barPercentage: 1,
+                // barThickness: 150,
+                // maxBarThickness: 120,
+                // minBarLength: 2,
+                backgroundColor: [
+                    rndColor(),
+                    rndColor(),
+                    rndColor(),
+                    rndColor(),
+                    rndColor(),
+                    rndColor(),
+                    rndColor(),
+                    rndColor(),
+                    rndColor(),
+                    rndColor()
+                ],
+                hoverBackgroundColor: "#e9041e",
+                hoverBorderColor: "black",
+                hoverBorderWidth: 10
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'RESG Applications per Cds/Csm in Prod as of 12-March-2020',
+                fontSize: 30,
+                fontWeight: 'bold'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 5,
+                        max: 80
+                    }
+                }]
+            }
+        }
+    }
+
+    return config;
+}
+
+export { Progression, Repartition, Distribution };

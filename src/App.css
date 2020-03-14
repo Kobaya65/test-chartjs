@@ -86,6 +86,7 @@ div.Card {
 séparation entre chaque groupe de données (Répartition, Distribution, etc.)
 */
 .group {
-  background-color: bisque;
+  /** couleur d'accompagnement SG */
+  background-color: #ddc6b6;
   color: blue;
 }
