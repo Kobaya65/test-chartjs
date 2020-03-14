@@ -1,6 +1,5 @@
 import React from 'react';
 import './index.css';
-//import { Chart } from '../node_modules/chart.js';
 
 import CardHistogram from "./components/CardHistogram";
 import CardLineChart from "./components/CardLineChart";
@@ -10,22 +9,13 @@ import { Progression, Repartition, Distribution } from './dataGeneration';
 export default class AppClass extends React.Component {
     render() {
         return (
-            // <div className="App">
-            //     <div className="main chart-wrapper">
-            //         <LineChart
-            //             data={this.state.data[0].data}
-            //             title={this.state.data[0].title}
-            //             color="#FE0000"
-            //         />
-            //     </div>
-            // </div>
             <div className="container-fluid">
                 <div className="row sticky-top App-header">
 
                     <div className="d-flex">
                         <div className="p-2">
                             <a className="navbar-brand" href="#">
-                                <img src={"../public/images/societe-generale-logo-noir.png"} height="30" className="d-inline-block align-top" alt="logo société générale" />
+                                <img src={`${ process.env.PUBLIC_URL }/images/societe-generale-logo-noir.png`} height="30" className="d-inline-block align-top" alt="logo Société Générale" />
                             </a>
                         </div>
                         <div className="p-2 align-middle">

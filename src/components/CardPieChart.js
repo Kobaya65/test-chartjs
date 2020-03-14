@@ -20,7 +20,7 @@ class CardPieChart extends React.Component {
     }
 
     render() {
-        return <canvas ref={this.canvasRef} width="10" />;
+        return <canvas ref={this.canvasRef} width="50" />;
     }
 }
 

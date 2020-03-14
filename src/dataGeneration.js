@@ -46,7 +46,7 @@ function Progression() {
                 [{
                     label: "RESG 2018",
                     data: [403, 398, 398, 398, 396, 395, 395, 394, 393, 390, 390, 389],
-                    fill: false,
+                    fill: true,
                     backgroundColor: "black",       // seulement si fill: true
                     borderColor: "#e9041e",
                     lineTension: 0,
@@ -58,7 +58,7 @@ function Progression() {
                     pointBorderWidth: 5,            // taille des points
                     pointStyle: '',                 // 'circle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star'
                     borderDash: [],  //[25, 5, 5, 5]  // ligne en pointillé ou tirets ; tableau vide = ligne pleine
-                    hoverBackgroundColor: ["yellow"]
+                    hoverBackgroundColor: ["yellow", "blue", "green", "white", "black", "grey", "lightBlue"]
                 }/*,
                 {
                     label: "RESG/BSC 2018",
