@@ -1,48 +1,45 @@
 import React from 'react';
 import './index.css';
 
-import CardHistogram from "./components/CardHistogram";
-import CardLineChart from "./components/CardLineChart";
-import CardPieChart from "./components/CardPieChart";
+import OneChart from "./components/oneChart";
 import { Progression, Repartition, Distribution } from './dataGeneration';
 
-export default class AppClass extends React.Component {
+export default class MyApp extends React.Component {
     render() {
         return (
-            <div className="container-fluid">
-                <div className="row sticky-top App-header">
-
+            // <div className="container-fluid">
+            <div>
+                <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 App-header">
                     <div className="d-flex">
-                        <div className="p-2">
-                            <a className="navbar-brand" href="#">
-                                <img src={`${ process.env.PUBLIC_URL }/images/societe-generale-logo-noir.png`} height="30" className="d-inline-block align-top" alt="logo Société Générale" />
-                            </a>
-                        </div>
+                        <a className="navbar-brand" href="#">
+                            <img src={`${ process.env.PUBLIC_URL }/images/societe-generale-logo-blanc.png`} height="30" className="d-inline-block align-top" alt="logo Société Générale" />
+                            {/* <img src={`../public/images/societe-generale-logo-blanc.png`} height="30" className="d-inline-block align-top" alt="logo Société Générale" /> */}
+                        </a>
                         <div className="p-2 align-middle">
                             KPI Transformation
                         </div>
                     </div>
-                </div>
+                </nav>
 
                 <div className="row group">
                     <h2>Distribution</h2>
                 </div>
                 <div className="row">
-                    {<CardPieChart className="PieChart" data={Distribution()} />}
+                    {<OneChart className="PieChart" data={Distribution()} />}
                 </div>
 
                 <div className="row group">
                     <h2>Progression</h2>
                 </div>
                 <div className="row">
-                    {<CardLineChart className="LineChart" data={Progression()} />}
+                    {<OneChart className="LineChart" data={Progression()} />}
                 </div>
 
                 <div className="row group">
                     <h2>Répartition</h2>
                 </div>
                 <div className="row">
-                    {<CardHistogram className="Histogram" data={Repartition()} />}
+                    {<OneChart className="Histogram" data={Repartition()} />}
                 </div>
 
                 <div className="App-footer row">
