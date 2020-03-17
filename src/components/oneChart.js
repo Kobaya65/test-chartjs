@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Chart from '../../node_modules/chart.js';
+import Chart from 'chart.js';
 import '../App.css';
 
-class CardLineChart extends React.Component {
+class OneChart extends React.Component {
     constructor( props ) {
         super( props );
         this.canvasRef = React.createRef();
@@ -24,8 +24,8 @@ class CardLineChart extends React.Component {
     }
 }
 
-CardLineChart.propTypes = {
+OneChart.propTypes = {
     data: PropTypes.array
 }
 
-export default CardLineChart;
+export default OneChart;

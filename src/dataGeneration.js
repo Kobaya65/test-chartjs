@@ -94,15 +94,18 @@ function Progression() {
     return config;
 }
 
+/**
+ * Renvoie la fonction rgb() avec des valeurs aléatoires de rouge, vert et bleu
+ */
 function rndColor() {
     let chaine = "rgb( ";
 
     // rouge
-    chaine = chaine + Math.random() * 255 + ", ";
+    chaine = chaine + Math.floor( Math.random() * 256 ) + ", ";
     // vert
-    chaine = chaine + Math.random() * 255 + ", ";
+    chaine = chaine + Math.floor( Math.random() * 256 ) + ", ";
     // bleu
-    chaine = chaine + Math.random() * 255 + " )";
+    chaine = chaine + Math.floor( Math.random() * 256 ) + " )";
 
     return chaine;
 }
