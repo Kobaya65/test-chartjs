@@ -20,7 +20,7 @@ class OneChart extends React.Component {
     }
 
     render() {
-        return <canvas ref={this.canvasRef} />;
+        return <canvas ref={this.canvasRef} width="300" height="200" />;
     }
 }
 
