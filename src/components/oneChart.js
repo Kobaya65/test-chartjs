@@ -7,12 +7,19 @@ class OneChart extends React.Component {
     constructor( props ) {
         super( props );
         this.canvasRef = React.createRef();
+        this.hauteur = 0;
     }
 
     componentDidUpdate() {
         this.myChart.data.labels = this.props.data.map( d => d.time );
         this.myChart.data.datasets[0].data = this.props.data.map( d => d.value );
         this.myChart.update();
+
+        // if ( this.props.type.value = "bar" ) {
+        //     this.hauteur = 800;
+        // } else {
+        //     this.hauteur = 400;
+        // }
     }
 
     componentDidMount() {
@@ -20,7 +27,7 @@ class OneChart extends React.Component {
     }
 
     render() {
-        return <canvas ref={this.canvasRef} width="300" height="200" />;
+        return <canvas ref={this.canvasRef} width="400" height="500" />;
     }
 }
 

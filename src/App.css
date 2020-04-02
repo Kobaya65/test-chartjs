@@ -15,21 +15,28 @@
 
 .app-header {
   background-color: #111111;
-  display: flex;
-  align-items: center;
-  justify-content: left;
   font-size: 26px;
-  color: #e9041e;
-  border-color: #e9041e;
+  color: #e9041e;             /* rouge SG*/
+  border-color: #e9041e;      /* rouge SG*/
   border-style: double;
   border-width: thick;
 }
 
 .app-footer {
+  position: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+  max-width: 1110px;
   margin: 0;
-  background-color: #111111;
-  color: lightblue;
+  background-color: black;
+  color: #ddc6b6;                 /* couleur d'accompagnement SG */
   text-align: right;
+  border-top-color: #e9041e;
+  border-top-style: solid;
+  border-top-width: thick;
 }
 
 .app-link {
@@ -48,7 +55,6 @@
 h1 {
   margin: 10px 10px;
   padding: 2px;
-  text-align: center;
 }
 
 h3 {
@@ -59,37 +65,17 @@ p {
   margin: 0 5px;
 }
 
-.card {
-  margin: 5px;
-  padding: 5px;
-  border-style: double;
-  border-color: teal;
-  background-color: cornflowerblue;
-  flex: flex;
-  text-align: center;
-  vertical-align: middle;
+canvas { 
+  margin: 0.2em 0;
+  border:1px solid black; 
 }
 
-div.card {
-  color: antiquewhite;
-}
-
-.histogram, .linechart {
-  height: 350px;
-  width: 500px;
-}
-
-.piechart {
-  height: 350px;
-  width: 350px;
-}
-
-/**
-séparation entre chaque groupe de données (Répartition, Distribution, etc.)
+/*
+  ligne de séparation entre chaque groupe de données
 */
 .group {
-  /** couleur d'accompagnement SG */
-  background-color: #ddc6b6;
+  background-color: #ddc6b6;  /* couleur d'accompagnement SG */
   color: blue;
   margin: 0.25em;
+  padding: 5px 5px 0;
 }
